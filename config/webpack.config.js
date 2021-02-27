@@ -3,7 +3,8 @@ const path = require('path')
 
 // puglins
 const plugins = {
-    HTMLPlugin: require('html-webpack-plugin')
+    HTMLPlugin: require('html-webpack-plugin'),
+    MiniCssExtractPlugin: require('mini-css-extract-plugin')
 }
 
 // paths
@@ -32,7 +33,22 @@ module.exports = {
                         presets: ['@babel/preset-react']
                     }
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                exclude: /(node_modules|bower_components)/,
+                use: [
+                    plugins.MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader', 
+                        options: {
+                            modules: {
+                                mode: 'local'
+                            }
+                        }
+                    }
+                ],
+              },
         ]
     },
     resolve: {
@@ -45,6 +61,7 @@ module.exports = {
             template: paths.template,
             filename: 'index.html',
             inject: true,
-        })
+        }),
+        new plugins.MiniCssExtractPlugin()
     ]
 }
