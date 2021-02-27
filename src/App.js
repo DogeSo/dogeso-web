@@ -1,5 +1,12 @@
 import React from 'react'
 
-const App = () => <div>So wow! :)</div>
+// views
+import { Home } from '@/views'
+
+const App = () => {
+    return (
+        <Home />
+    )
+}
 
 export default App
