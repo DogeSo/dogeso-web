@@ -6,12 +6,10 @@ import { Header } from '@/components'
 // styles
 import styles from './styles.css'
 
-const Home = () => {
-    return (
-        <div className={styles.container}>
-            <Header />
-        </div>
-    )
-}
+const Home = () => (
+  <div className={styles.container}>
+    <Header />
+  </div>
+)
 
 export default Home

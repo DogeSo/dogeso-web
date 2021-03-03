@@ -3,10 +3,8 @@ import React from 'react'
 // views
 import { Home } from '@/views'
 
-const App = () => {
-    return (
-        <Home />
-    )
-}
+const App = () => (
+  <Home />
+)
 
 export default App
