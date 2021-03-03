@@ -5,7 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production --config config/webpack.config.js"
+    "generate-dist": "webpack --mode=production --config config/webpack.config.js",
+    "generate-build": "webpack --mode=development --config config/webpack.config.js",
+    "start-server": "node config/server/index.js",
+    "watch": "nodemon --verbose --watch src -x \"npm run generate-build && npm run start-server\""
   },
   "repository": {
     "type": "git",
@@ -22,13 +25,17 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.8",
     "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.1.0",
+    "eslint": "^7.21.0",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^5.2.0",
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.3.9",
+    "nodemon": "^2.0.7",
+    "nodemon-webpack-plugin": "^4.4.4",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0"
   }
