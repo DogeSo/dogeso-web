@@ -18,19 +18,22 @@ const paths = {
     template: path.resolve(__dirname, './template.html')
 }
 
-module.exports = {
+module.exports = (env, options) => ({
     entry: {
         main: [paths.entry.main]
+    },
+    output: {
+        path: path.resolve(__dirname, options.mode === 'production' ? '../dist' : '../build')
     },
     module: {
         rules: [
             {
-                test: /\.m?js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-react']
+                        presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
             },
@@ -64,4 +67,4 @@ module.exports = {
         }),
         new plugins.MiniCssExtractPlugin()
     ]
-}
+})
