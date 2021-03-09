@@ -1,0 +1,19 @@
+@import '../../css/variables.css';
+
+.primary {
+  background-color: var(--color-red-primary);
+  outline: none;
+  border: none;
+
+  color: var(--color-white-primary);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 14px;
+  
+  padding: 10px 26.5px;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
