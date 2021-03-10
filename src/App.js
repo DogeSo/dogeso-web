@@ -1,10 +1,10 @@
 import React from 'react'
 
-// views
-import { Home } from '@/views'
+// components
+import { Layout } from '@/components'
 
 const App = () => (
-  <Home />
+  <Layout />
 )
 
 export default App

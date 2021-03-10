@@ -1,0 +1,21 @@
+@import '../../css/variables.css';
+
+.primaryGrid {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: auto minmax(300px, 1350px) auto;
+}
+
+.primaryColumn {
+  background-color: var(--color-blue-primary);
+}
+
+.contentLeftColumn {
+  background-color: var(--color-blue-primary);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(75px, 350px) auto;
+}
