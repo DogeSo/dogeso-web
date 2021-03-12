@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 // root component
 import App from './App'
@@ -7,7 +8,11 @@ import App from './App'
 // global css
 import '@/css/index.css'
 
-const component = <App />
+const component = (
+  <Router>
+    <App />
+  </Router>
+)
 // eslint-disable-next-line no-undef
 const element = document.getElementById('app')
 
